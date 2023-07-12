@@ -17,7 +17,7 @@ import passport from 'passport';
 import initializePassport from './config/passport.config.js';
 import logger, { addLogger } from './config/winston.config.js';
 
-import './config/dbMongo.Config.js';
+import './config/dbMongo.config.js';
 
 const PORT = procces.env.PORT || 8080;
 const ENVIROMENT = process.env.NODE_ENVIROMENT;
