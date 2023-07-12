@@ -3,12 +3,10 @@ import __dirname  from '../utils.js';
 
 export const transport = nodemailer.createTransport({
     service: 'gmail',
-    //puerto de Gmail es 587, c/proveedor tiene un puerto distinto
     port: 587,
     auth: {
-        user: 'federicoepaglia@gmail.com',
-        //Contrasena exclusiva para nodejs
-        pass: 'apasbkxnpzxruenz'
+        user:  procces.env.GMAILUSER,
+        pass: procces.env.GMAILPASS
     }
 });
 

@@ -7,7 +7,6 @@ import userModel from '../dao/MongoDB/models/users.model.js';
 import { createCart } from '../services/carts.services.js';
 import { createHash, isValidPassword } from '../utils.js';
 import UserDto from '../dao/DTOs/users.dto.js'
-import config from './config.js';
 import logger from './winston.config.js';
 import { newUser as newUserMailing } from './nodemailer.config.js';
 
@@ -123,7 +122,7 @@ const initializePassport = () =>{
 
     const JWTStrategy = jwt.Strategy;
     const ExtractJWT = jwt.ExtractJwt;
-    const PRIVATE_KEY = config.jwt_key;
+    const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
     const cookieExtractor = req => {
         let token = null;

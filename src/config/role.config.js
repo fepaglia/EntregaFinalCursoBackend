@@ -1,5 +1,4 @@
 import UserDto from "../dao/DTOs/users.dto.js";
-import logger from "./winston.config.js";
 
 const authorizeRol = (...roles) => async (req, res, next) => {
 

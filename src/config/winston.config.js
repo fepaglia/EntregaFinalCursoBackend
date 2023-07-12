@@ -1,6 +1,5 @@
 import winston, { format } from 'winston';
 import  __dirname  from '../utils.js'
-import config from './config.js';
 
 const levels = {
     fatal: 0,
@@ -56,7 +55,7 @@ const options = {
     }
 }
 
-const ENVIROMENT = config.enviroment;
+const ENVIROMENT = process.env.NODE_ENVIROMENT;
 
 let logger;
 

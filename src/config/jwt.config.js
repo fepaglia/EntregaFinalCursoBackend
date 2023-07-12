@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
-import config from './config.js';
 
-const PRIVATE_KEY = config.jwt_key;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 export const generateToken = async (user) => {
     const token = jwt.sign({

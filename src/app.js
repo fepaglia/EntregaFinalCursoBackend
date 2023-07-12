@@ -18,11 +18,10 @@ import initializePassport from './config/passport.config.js';
 import logger, { addLogger } from './config/winston.config.js';
 
 import './config/dbMongo.Config.js';
-import config from './config/config.js';
 
 const PORT = procces.env.PORT || 8080;
-const ENVIROMENT = config.enviroment;
-const MONGO_URI = config.mongoUrl;
+const ENVIROMENT = process.env.NODE_ENVIROMENT;
+const MONGO_URI = process.env.MONGO_URL;
 
 const app = express();
 
