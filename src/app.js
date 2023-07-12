@@ -19,7 +19,7 @@ import logger, { addLogger } from './config/winston.config.js';
 
 import './config/dbMongo.config.js';
 
-const PORT = procces.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 const ENVIROMENT = process.env.NODE_ENVIROMENT;
 const MONGO_URI = process.env.MONGO_URL;
 
