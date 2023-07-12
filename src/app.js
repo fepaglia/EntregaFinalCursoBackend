@@ -65,4 +65,4 @@ app.use('/api/sessions', sessionsRouter);
 app.use('/api/carts', cartsRouter);
 app.use('/', viewsRouter);
 
-app.listen(PORT, ()=> logger.info(`Server On. 3preEntrega. Entorno de: ${ENVIROMENT}`));
+app.listen(PORT, ()=> logger.info(`Server On. Entorno de: ${ENVIROMENT}`));
