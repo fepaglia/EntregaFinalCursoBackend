@@ -1,0 +1,43 @@
+<div>
+    <header>
+        <div>
+            <h1>Product manager</h1>
+            <p>Bienvenido: <b>{{user.first_name}}</b>!</p>
+        </div>
+        <nav>
+            <ul class="options">
+                <li><button><a href="/profile">Mi Perfil</a></button></li>
+                <li><button><a href="/users">Panel de Administrador</a></button></li>
+                <li><button><a href="/api/sessions/logout">Salir de la sesion</a></button></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        {{#if products }}
+            {{#each products}}
+                <div class="prodBox">
+                    <img class="img" src="{{thumbnail}}" alt="{{title}}">
+
+                    <p>{{title}}</p>
+                    <p>Precio: {{price}}</p>
+                    <p>Stock: {{stock}}</p>
+
+                    <button class="addToCart" data-cart="{{{../cart}}}" data-product-id="{{_id}}" data-action="increase">Agregar al Carrito</button>
+                
+                    <button><a href="/products/{{_id}}">Ver detalle</a></button>
+                </div>  
+            {{/each}}
+        {{/if}}
+    </div>
+    <div>
+        {{#if hasPrevPage}}
+            <a href="/products?page={{prevPage}}"><button>Anterior</button></a>
+        {{/if}}
+        {{#if hasNextPage}}
+            <a href="/products?page={{nextPage}}"><button>Siguiente</button></a>
+        {{/if}}
+    </div>
+</div>
+<script src="/js/products.js"></script>

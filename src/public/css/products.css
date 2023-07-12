@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.options{
+    display: flex;
+    flex-flow: row nowrap ;
+}
+
+.options > li {
+    list-style-type: none;
+    margin: 10px;
+    padding: 5px;
+}
+
+.container {
+    width: 100%;
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.prodBox {
+    padding: 15px;
+    margin: 15px;
+    width: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;   
+}
+
+
+.img {
+    object-fit: cover;
+    object-position: center;
+    width: 250px;
+    height: 350px;
+}

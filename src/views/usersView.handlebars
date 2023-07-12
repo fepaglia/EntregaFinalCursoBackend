@@ -1,0 +1,49 @@
+<div>
+    <header>
+        <div>
+            <h1>Panel Administrador de Usuarios</h1>
+            <p>Administrador: <span>{{user.first_name}}</span></p>
+        </div>
+        <nav>
+            <ul class="options">
+                <li><button><a href="/users">Aplicar Cambios</a></button></li>
+                <li><button><a href="/products">Atras</a></button></li>
+                <li><button><a href="/api/sessions/logout">Salir de la sesion</a></button></li>
+            </ul>
+        </nav>
+
+    </header>
+    {{#if users}}
+        {{#each users}}
+            <div class="userBox">
+                <ul>
+                    <li>Id: {{_id}}</li>
+                    <li>Name: {{first_name}} {{last_name}}</li>
+                    <li>Email: {{email}}</li>
+                    <li>Role: <b>{{role}}</b></li>
+                    <li>Last Connection: {{lastConnection}}</li>
+                </ul>
+                <div class="options2">
+                     <select class="userTypeSelect" data-email="{{{email}}}">
+                    <option value="" disabled selected>Cambiar rol</option>
+                    <option value="user">User</option>
+                    <option value="premium">Premium</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button class="deleteUser" data-email="{{{email}}}">Eliminar usuario</button>
+
+                </div>
+               
+            </div>
+        {{/each}}
+    {{/if}}
+</div>
+<div>
+        {{#if hasPrevPage}}
+            <a href="/users?page={{prevPage}}"><button>Anterior</button></a>
+        {{/if}}
+        {{#if hasNextPage}}
+            <a href="/users?page={{nextPage}}"><button>Siguiente</button></a>
+        {{/if}}
+</div>
+<script src="/js/adminpanel.js"></script>

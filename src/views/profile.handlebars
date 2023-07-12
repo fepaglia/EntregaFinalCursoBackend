@@ -1,0 +1,66 @@
+<div>
+    <header>
+        <div>
+            <h1>Perfil de: {{user.first_name}}</h1>
+        </div>
+        <nav>
+            <ul class="options">
+                <li><button><a href="/api/sessions/logout">Salir de la sesion</a></button></li>
+                <li><button><a href="/products">Atras</a></button></li>
+                <li> 
+                    {{#if listOfProducts}}
+                    <button class="purchase" data-cart="{{cartsCode}}">Finalizar la compra</button>
+                    {{else}}
+                    <button disabled>Finalizar la compra</button>
+                    {{/if}}
+                </li>
+            </ul>
+        </nav>    
+    </header>
+        <p>Codigo del Carrito Actual: <b>{{cartsCode}}</b> </p>
+    <div class="container">
+
+        {{#if listOfProducts}}
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            {{#each listOfProducts}}
+                        <tr>
+                        <td><p>{{pId.title}}</p> </td>
+                        <td><p>{{{pId.price}}}</p></td>
+                        <td> 
+                            <div class="quantity">
+                                <button class="decrease" data-cart="{{../cartsCode}}" data-product-id="{{{pId._id}}}">-</button>
+                                <p>{{quantity}}</p>
+                                <button class="increase" data-cart="{{../cartsCode}}" data-product-id="{{{pId._id}}}">+</button>
+                            </div>
+                        </td>
+                        <td><b>{{totalAmount}}</b></td>
+                        </tr>
+               
+            {{/each}}
+                        <tr>
+                            <td colspan="3" style="text-align: right;"><b>Total:</b></td>
+                            <td><b>{{totalAmount}}</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+        {{else}}
+            <div class="empty">
+                <div>
+                    <h2>El carrito se encuentra vacio</h2>
+                    <a href="/products">Ver Productos</a>
+
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>
+<script src="/js/profile.js"></script>

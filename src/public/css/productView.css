@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+.prodBox {
+    padding: 15px;
+    margin: 15px;
+    width: 750px;
+    border: 1px solid black;
+    
+}
+
+.prodBox > div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+    width: 500px;
+    height: 750px;
+}

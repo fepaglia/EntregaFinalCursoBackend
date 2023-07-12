@@ -1,0 +1,24 @@
+<div>
+   <header>
+        <h1>Product manager</h1>
+        <button><a href="/products">Atras</a></button>
+    </header>
+
+    <div class="container">
+        {{#if product }}
+            <div class="prodBox">
+                <div><span>ID: </span><p>{{product._id}}</p></div>
+                <div><span>Nombre: </span><p>{{product.title}}</p></div>
+                <div><span>Precio: </span><p>{{product.price}}</p></div>
+                <div><span>Descripcion: </span><p>{{product.description}}</p></div>
+                <div><span>Status: </span><p>{{product.status}}</p></div>
+                <div><span>Stock: </span><p>{{product.stock}}</p></div>
+            </div> 
+                <img src="{{product.thumbnail}}" alt="{{product.title}}">
+        {{else}}
+            <div class="prodBox">
+                <h2>El Producto que estas buscando no existe, o no se encuentra disponible en este momento. Intentelo mas tarde.</h2>
+            </div>
+        {{/if}}
+    </div>
+</div>

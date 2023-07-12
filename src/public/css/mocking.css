@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+
+#productForm {
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+
+    width: 20rem;
+    height: 25rem;
+
+    padding: 5px;
+}
+
+#formulario > div {
+    display: flex;
+    flex-direction: row wrap;
+
+    margin: 10px 0;
+}
+
+label {
+    margin-right: 5px ;
+}
+
+#liveProducts{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    height: 95vh;
+    width: 100%;
+}
+
+.prodBox {
+    padding: 15px;
+    margin: 15px;
+    width: 300px;
+    border: 1px solid black;
+    
+}
+
+.prodBox > div {
+    display: flex;
+    flex-flow: row nowrap;
+}
