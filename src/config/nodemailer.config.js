@@ -5,7 +5,7 @@ export const transport = nodemailer.createTransport({
     service: 'gmail',
     port: 587,
     auth: {
-        user:  process.env.GMAILUSER,
+        user: process.env.GMAILUSER,
         pass: process.env.GMAILPASS
     }
 });

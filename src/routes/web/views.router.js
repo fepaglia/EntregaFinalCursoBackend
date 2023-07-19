@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { rootView, loginRedirectView, loginView, registerView, resetPassView, cartView, productsView, productView, profileView, privateAccess, publicAccess, usersView } from '../../controllers/views.controllers.js';
+import { rootView, loginRedirectView, loginView, registerView, resetPassView, cartView, productsView, productView, profileView, privateAccess, publicAccess, usersView, orderView } from '../../controllers/views.controllers.js';
 import { authenticateToken } from '../../config/jwt.config.js';
 import authorizeRol  from '../../config/role.config.js';
 
@@ -28,5 +28,7 @@ router.get('/profile', privateAccess, authenticateToken, authorizeRol('user', 'p
 
 //Vista de panel de ADMINISTRADOR de usuarios:
 router.get('/users', privateAccess, authenticateToken, authorizeRol('admin'), usersView);
+
+router.get('/ordercreated', privateAccess, authenticateToken, authorizeRol('user', 'premium'), orderView)
 
 export default router;

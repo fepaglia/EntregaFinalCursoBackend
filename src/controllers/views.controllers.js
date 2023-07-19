@@ -1,6 +1,6 @@
-import { getProducts as getProductsServices, getProductsById as getProductsByIdServices } from '../services/products.services.js';
-import { getCartById as getCartByIdServices} from '../services/carts.services.js';
-import { getUsers as getUsersServices } from '../services/users.services.js';
+import { getProducts as getProductsServices, getProductsById as getProductsByIdServices } from '../repository/products.repository.js';
+import { getCartById as getCartByIdServices} from '../repository/carts.repository.js';
+import { getUsers as getUsersServices } from '../repository/users.repository.js';
 import logger from '../config/winston.config.js';
 import UserDto from '../dao/DTOs/users.dto.js';
 import ProductsDto from '../dao/DTOs/products.dto.js';
@@ -197,6 +197,16 @@ const usersView = async (req, res) =>{
     };
 };
 
+const orderView = async (req,res) =>{
+    try {
+        res.render('orderCreated')
+    } catch (error) {
+        logger.error(error);
+        res.status(500).send({ error });
+    }
+}
+
+
 const publicAccess = (req, res, next) =>{
     if (req.cookies['cookieToken']) return res.redirect('/');
     next();
@@ -220,5 +230,6 @@ export {
     profileView,
     publicAccess,
     privateAccess,
-    usersView
+    usersView,
+    orderView
 };

@@ -4,8 +4,8 @@ import {
     getProductsById as getProductsByIdServices,
     updateProduct as updateProductServices,
     deleteProduct as deleteProductServices
-} from '../services/products.services.js';
-import { getUserById as getUserByIdServices } from '../services/users.services.js';
+} from '../repository/products.repository.js';
+import { getUserById as getUserByIdServices } from '../repository/users.repository.js';
 import logger from '../config/winston.config.js';
 import { deleteProduct as deleteProductMail } from '../config/nodemailer.config.js';
 import UserDto from '../dao/DTOs/users.dto.js';

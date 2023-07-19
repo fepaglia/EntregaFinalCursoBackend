@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .then(result => {
-                if(result.status === 200) {        
-                    location.href = "/products";
+                if(result.status === 201) {        
+                    window.location.href = "/products";                
                 }
             });
         });

@@ -4,7 +4,7 @@ import  {
     getUsers as getUsersServices , 
     updateRole as updateRoleServices,
     cleanUsers as cleanUsersServices
-} from '../services/users.services.js';
+} from '../repository/users.repository.js';
 import { createHash } from '../utils.js';
 import { generateToken } from '../config/jwt.config.js';
 import { deleteUser as deleteUserMail } from '../config/nodemailer.config.js';

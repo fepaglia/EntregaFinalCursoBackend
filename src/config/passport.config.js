@@ -2,9 +2,9 @@ import passport from 'passport';
 import local from 'passport-local';
 import jwt from 'passport-jwt';
 import GitHubStrategy from 'passport-github2';
-import { createCartUser } from '../services/users.services.js';
+import { createCartUser } from '../repository/users.repository.js';
 import userModel from '../dao/MongoDB/models/users.model.js';
-import { createCart } from '../services/carts.services.js';
+import { createCart } from '../repository/carts.repository.js';
 import { createHash, isValidPassword } from '../utils.js';
 import UserDto from '../dao/DTOs/users.dto.js'
 import logger from './winston.config.js';
